@@ -1,15 +1,15 @@
-import SearchBar from '@/components/search/SearchBar';
-import SearchTogle from '@/components/search/SearchTogle';
-import authApi from '@/hooks/api/axios.authorization.instance';
+import SearchBar from "@/components/search/SearchBar";
+import SearchTogle from "@/components/search/SearchTogle";
+import authApi from "@/hooks/api/axios.authorization.instance";
 import {
   newTogleState,
   searchInputState,
   topicTogleState,
-} from '@/recoil/search';
-import React, { ReactNode, useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { SearchItem } from '@/components/search/SearchItem';
+} from "@/recoil/search";
+import React, { ReactNode, useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { SearchItem } from "@/components/search/SearchItem";
 
 export const Search = () => {
   const [inputValue, setInputValue] = useRecoilState(searchInputState);
@@ -32,9 +32,9 @@ export const Search = () => {
     md:w-full md:h-full md:justify-center md:grid md:grid-cols-2 xl:grid xl:grid-cols-3 md:overflow-y-scroll scrollbar-hide`;
 
   const notFoundClass = (data: boolean) => {
-    let isTopic = '토픽';
+    let isTopic = "토픽";
     if (!data) {
-      isTopic = '리프';
+      isTopic = "리프";
     }
     return (
       <div className="bg-white flex flex-col place-items-center justify-items-center h-full w-full">
@@ -53,13 +53,14 @@ export const Search = () => {
     if (!userInput) return;
     try {
       const response = await authApi.get(`topic/search?input=${userInput}`);
+      console.log("검색연결완료");
       return response.data;
     } catch (data: any) {
       setIsTopicFound(false);
     }
   };
   const getTopic = useQuery(
-    ['topic', inputValue.inputValue],
+    ["topic", inputValue.inputValue],
     () => searchTopicFn(inputValue.inputValue),
     {
       onSuccess: (data) => {
@@ -116,7 +117,7 @@ export const Search = () => {
     }
   };
   const getLeaf = useQuery(
-    ['leaf', inputValue.inputValue],
+    ["leaf", inputValue.inputValue],
     () => searchLeafFn(inputValue.inputValue),
     {
       onSuccess: (data) => {

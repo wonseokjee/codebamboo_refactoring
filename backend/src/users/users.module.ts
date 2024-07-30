@@ -9,7 +9,7 @@ import { likeRepository } from './dao/likes.repository';
 import { LeafRepository } from 'src/leafs/dao/leafs.repository';
 import { APP_PIPE } from '@nestjs/core';
 import { TopicRepository } from 'src/topics/dao/topics.repository';
-import { CloudStorageService } from '../core/services/cloud-stroage-service'
+import { CloudStorageService } from '../core/services/cloud-stroage-service';
 import { GptService } from 'src/core/services/gpt.service';
 
 @Module({
@@ -28,7 +28,7 @@ import { GptService } from 'src/core/services/gpt.service';
       useClass: ValidationPipe,
     },
     CloudStorageService,
-    GptService
+    GptService,
   ],
   exports: [...userRepository, UsersService],
 })

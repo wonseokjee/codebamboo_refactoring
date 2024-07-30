@@ -11,19 +11,18 @@ export interface userObject {
 }
 
 export const userDefault = {
-  isLoggedIn: false,
+  isLoggedIn: true,
   email: "Panda123@codeBamboo.site",
-  image:
-    "https://ssl.pstatic.net/static/pwe/address/img_profile.png",
+  image: "https://ssl.pstatic.net/static/pwe/address/img_profile.png",
   introduce: "Hello, Bamboos!",
   nickname: "Panda123",
   provider: "kakao",
-  user_id: null,
-}
+  user_id: 2,
+};
 
 export const userState = atom<userObject>({
   key: "userState", // 선언명과 같지 않아도 됨, 그래도 통일하면 좋을 듯
-  default:userDefault
+  default: userDefault,
 });
 
 export const loginModalState = atom<boolean>({
@@ -35,4 +34,3 @@ export const dialogState = atom<boolean>({
   key: "dialogState", // 선언명과 같지 않아도 됨, 그래도 통일하면 좋을 듯
   default: false,
 });
-
