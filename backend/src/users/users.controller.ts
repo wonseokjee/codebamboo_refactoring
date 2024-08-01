@@ -127,7 +127,7 @@ export class UsersController {
     @Body() userInput: any,
     @UploadedFile() profileImg,
   ) {
-    console.log('img : ', profileImg);
+    // console.log('img : ', profileImg);
     // req.user 는 jwt 토큰이 발급되면 안에 담김
     // return this.usersService.update(req.user['user_id'], userInput, profileImg);
     return this.usersService.update(2, userInput, profileImg);

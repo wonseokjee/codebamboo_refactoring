@@ -52,7 +52,9 @@ export class TopicsController {
   // @UseGuards(JwtAuthGuard)
   @Post()
   create(@Body() createTopicDto, @Req() req: Request) {
-    const user_id = req.user['user_id'];
+    // const user_id = req.user['user_id'];
+    //test 아이디 주소는 2
+    const user_id = 2;
     return this.topicsService.create(createTopicDto, user_id);
   }
 

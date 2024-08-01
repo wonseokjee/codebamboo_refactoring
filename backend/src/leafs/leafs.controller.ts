@@ -38,7 +38,9 @@ export class LeafsController {
 
   @Post()
   create(@Body() createLeaf, @Req() req: Request) {
-    const user_id = req.user['user_id'];
+    // const user_id = req.user['user_id'];
+    // 사용자 user_id 2로 고정
+    const user_id = 2;
     return this.leafsService.create(createLeaf, user_id);
   }
 

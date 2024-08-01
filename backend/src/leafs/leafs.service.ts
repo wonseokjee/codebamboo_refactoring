@@ -194,7 +194,7 @@ export class LeafsService {
       if (!contentDto) {
         contentDto = null;
       }
-      console.log(contentDto);
+      // console.log(contentDto);
       const updateLeaf = await this.leafRepository
         .createQueryBuilder()
         .update(Leaf)
