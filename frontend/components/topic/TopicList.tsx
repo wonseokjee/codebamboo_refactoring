@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { TopicItem } from './TopicItem';
-import useIsClient from '@/hooks/useIsClient';
-import { TopicItemInF } from './TopicInterface';
-import useIsMobile from '@/hooks/useIsMobile';
-import Image from 'next/image';
-import rightArrowImg from '@/public/images/right_arrow.png';
-import leftArrowImg from '@/public/images/left_arrow.png';
+import React, { useState } from "react";
+import { TopicItem } from "./TopicItem";
+import useIsClient from "@/hooks/useIsClient";
+import { TopicItemInF } from "./TopicInterface";
+import useIsMobile from "@/hooks/useIsMobile";
+import Image from "next/image";
+import rightArrowImg from "@/public/images/right_arrow.png";
+import leftArrowImg from "@/public/images/left_arrow.png";
 
 interface Props {
   topicList: TopicItemInF[];
@@ -63,8 +63,8 @@ export const TopicList = ({ topicList }: Props) => {
   return (
     <div
       className={`relative w-screen flex
-                  h-[40vh] ${
-                    isMobile ? 'overflow-y-visible overflow-x-scroll' : ''
+                  h-[35vh] ${
+                    isMobile ? "overflow-y-visible overflow-x-scroll" : ""
                   }
                   md:w-full md:h-[51vh] md:items-end md:overflow-hidden md:px-5`}
     >
@@ -73,7 +73,7 @@ export const TopicList = ({ topicList }: Props) => {
         className={`w-screen flex
       md:w-full md:h-[53vh] md:items-end md:px-5 md:transition`}
         style={{
-          transform: !isMobile ? `translateX(${-40 * viewPart}rem)` : '',
+          transform: !isMobile ? `translateX(${-40 * viewPart}rem)` : "",
         }}
       >
         {isClient && topicListItems}
