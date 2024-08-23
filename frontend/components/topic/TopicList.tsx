@@ -63,7 +63,7 @@ export const TopicList = ({ topicList }: Props) => {
   return (
     <div
       className={`relative w-screen flex
-                  h-[35vh] ${
+                  h-[40vh] ${
                     isMobile ? "overflow-y-visible overflow-x-scroll" : ""
                   }
                   md:w-full md:h-[51vh] md:items-end md:overflow-hidden md:px-5`}
