@@ -7,7 +7,6 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import { isBrowser } from 'browser-or-node';
 import { Layout } from '@/components/common/Layout';
-import Modal from '@/components/common/LoginModal';
 
 if (isBrowser) {
   require('codemirror/mode/htmlmixed/htmlmixed');
@@ -23,11 +22,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <RecoilRoot>
         <Head>
           <title>Code Bamboo</title>
-          <link rel="icon" href="/codebamboo.ico" />
+          <link rel='icon' href='/codebamboo.ico' />
         </Head>
         <Layout>
           <Component {...pageProps} />
-          <Modal />
         </Layout>
       </RecoilRoot>
     </QueryClientProvider>

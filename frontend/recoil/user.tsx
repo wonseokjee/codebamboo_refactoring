@@ -11,13 +11,13 @@ export interface userObject {
 }
 
 export const userDefault = {
-  isLoggedIn: true,
+  isLoggedIn: false,
   email: "Panda123@codeBamboo.site",
   image: "https://ssl.pstatic.net/static/pwe/address/img_profile.png",
   introduce: "Hello, Bamboos!",
   nickname: "Panda123",
   provider: "kakao",
-  user_id: 2,
+  user_id: 0,
 };
 
 export const userState = atom<userObject>({
