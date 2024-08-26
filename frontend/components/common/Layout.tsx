@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Bar } from './Bar';
 import { userState } from '@/recoil/user';
 import { useSetRecoilState } from 'recoil';
 import authApi from '@/hooks/api/axios.authorization.instance';
@@ -34,7 +33,7 @@ export const Layout = ({ children }: Props) => {
     }
     const onScroll = () => {
       const wheelscroll = document.documentElement.scrollTop;
-      
+
       if (wheelscroll > 500) {
         window.removeEventListener('scroll', onScroll);
         setIsBarBundle(true);
