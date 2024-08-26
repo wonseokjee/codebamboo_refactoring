@@ -23,9 +23,9 @@ export const Bar = () => {
       <>
         <div
           onClick={handleMenuClick}
-          className="h-full w-20 flex justify-center items-center"
+          className='h-full w-20 flex justify-center items-center'
         >
-          <img src="/images/icons/menu_icon.png" />
+          <img src='/images/icons/menu_icon.png' />
         </div>
         {isMenuOpen && (
           <BarItems isHovered={true} setIsMenuOpen={setIsMenuOpen} />
@@ -36,12 +36,12 @@ export const Bar = () => {
     );
 
   const Logo = isClient && (
-    <Link href="/" onClick={() => setIsMenuOpen(false)}>
+    <Link href='/' onClick={() => setIsMenuOpen(false)}>
       {isMobile ? (
-        <img src="/images/icons/bar_icon.png" alt="Bar Icon" />
+        <img src='/images/icons/bar_icon.png' alt='Bar Icon' />
       ) : (
         <div
-          className="flex items-center mt-4 justify-between"
+          className='flex items-center mt-4 justify-between'
           onMouseEnter={() => setIsIconHovered(true)}
           onMouseLeave={() => setIsIconHovered(false)}
         >
@@ -51,8 +51,8 @@ export const Bar = () => {
                 ? '/images/icons/logo_icon_green.png'
                 : '/images/icons/logo_icon.png'
             }
-            className=""
-            alt="Logo Icon"
+            className=''
+            alt='Logo Icon'
           />
           {isHovered && (
             <div
@@ -62,7 +62,7 @@ export const Bar = () => {
                         md:animate-fadein`}
             >
               <p>
-                <span className="md:text-2xl md:font-semibold">H</span>
+                <span className='md:text-2xl md:font-semibold'>H</span>
                 ome
               </p>
             </div>
@@ -89,3 +89,5 @@ export const Bar = () => {
     </aside>
   );
 };
+
+export default Bar;
