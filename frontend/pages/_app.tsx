@@ -5,14 +5,8 @@ import { RecoilRoot } from 'recoil';
 import '@/styles/globals.css';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
-import { isBrowser } from 'browser-or-node';
-import { Layout } from '@/components/common/Layout';
 
-if (isBrowser) {
-  require('codemirror/mode/htmlmixed/htmlmixed');
-  require('codemirror/mode/css/css');
-  require('codemirror/mode/javascript/javascript');
-}
+import { Layout } from '@/components/common/Layout';
 
 const queryClient = new QueryClient();
 

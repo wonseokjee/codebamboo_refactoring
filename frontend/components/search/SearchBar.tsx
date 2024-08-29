@@ -1,7 +1,5 @@
 import {
   searchInputState,
-  searchModalState,
-  toggleSearchModal,
 } from '@/recoil/search';
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';

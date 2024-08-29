@@ -5,7 +5,6 @@ import {
 } from '@/recoil/search';
 import React, { useState } from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 type State = {
@@ -18,7 +17,6 @@ function SearchModal() {
     const [inputValue, setInputValue] = useRecoilState(searchInputState);
     const [searchInput, setSearchInput] = useState<String>('');
     const router = useRouter();
-    // console.log(SearchModal.isOpen);
     const modalWrapperClasses = `
         ${SearchModal.isOpen ? '' : 'hidden'}
         search-modal-wrapper

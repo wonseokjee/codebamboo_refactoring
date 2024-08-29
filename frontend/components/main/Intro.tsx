@@ -31,7 +31,7 @@ export const Intro = () => {
                     w-[60%] h-auto top-6 left-6
                     md:w-1/5 md:top-10 md:left-10'
       >
-        <img className='h-10' src='images/icons/bar_icon.png' />
+        <img className='h-10 w-10' src='images/icons/bar_icon.png' />
         <div
           className=' text-white items-center text-[1rem] font-semibold 
         md:font-bold md:text-[1rem]'

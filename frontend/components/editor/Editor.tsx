@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { codeState, gptTrigger, selectedLeafState } from '@/recoil/topic';
-import { UnControlled as CodeItem } from 'react-codemirror2';
+// import { UnControlled as CodeItem } from 'react-codemirror2';
 import { Rendering } from './Rendering';
 import { Article } from './Article';
 import useIsMobile from '@/hooks/useIsMobile';
+import dynamic from 'next/dynamic';
 import useIsClient from '@/hooks/useIsClient';
+
+// const DynamicCodeItem = dynamic(() =>
+//   import('react-codemirror2').then((mod) => mod.UnControlled)
+// );
 
 export const Editor = () => {
   const [code, setCode] = useRecoilState(codeState);
-  const selectedLeaf = useRecoilValue(selectedLeafState)
+  const selectedLeaf = useRecoilValue(selectedLeafState);
   const isMobile = useIsMobile();
   const isClient = useIsClient();
   const [selectedLanguage, setSelectedLanguage] = useState('HTML');
   const [initialCode, setInitialCode] = useState('');
-  const codeUpdateTrigger = useRecoilValue(gptTrigger) 
+  const codeUpdateTrigger = useRecoilValue(gptTrigger);
 
   const mode: any = {
     HTML: 'htmlmixed',
@@ -60,7 +65,7 @@ export const Editor = () => {
       .map((e) => e.language);
 
     return (
-      <div className="flex flex-row h-16 overflow-x-scroll scrollbar-hide shrink-0 w-full">
+      <div className='flex flex-row h-16 overflow-x-scroll scrollbar-hide shrink-0 w-full'>
         {tabs.map((tab) => (
           <div
             key={tab}
@@ -92,36 +97,38 @@ export const Editor = () => {
 
   return (
     <div
-      className="flex h-full w-full
+      className='flex h-full w-full
                     flex-col
-                    md:flex-row"
+                    md:flex-row'
     >
       <div
-        className="box-border flex flex-col h-full
+        className='box-border flex flex-col h-full
       
-                      md:w-1/2"
+                      md:w-1/2'
       >
         <Tabs />
-        <div className="h-full overflow-y-hidden">
+        <div className='h-full overflow-y-hidden'>
           {selectedLanguage !== 'Content' ? (
             <>
-              {isClient && <CodeItem
-                className="h-full
+              {/* {isClient && (
+                <DynamicCodeItem
+                  className='h-full
                             text-base
-                            md:text-lg"
-                value={initialCode}
-                onChange={handleChange}
-                options={{
-                  mode: mode[selectedLanguage],
-                  theme: 'material',
-                  lineNumbers: true,
-                  scrollbarStyle: 'null',
-                  lineWrapping: true,
-                }}
-              />}
+                            md:text-lg'
+                  value={initialCode}
+                  onChange={handleChange}
+                  options={{
+                    mode: mode[selectedLanguage],
+                    theme: 'material',
+                    lineNumbers: true,
+                    scrollbarStyle: 'null',
+                    lineWrapping: true,
+                  }}
+                />
+              )} */}
             </>
           ) : (
-            <div className="h-full">
+            <div className='h-full'>
               <Article />
               <Rendering />
             </div>

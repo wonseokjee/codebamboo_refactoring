@@ -1,9 +1,11 @@
+// 'use client';
 import { Intro } from '@/components/main/Intro';
 // import Main from '@/components/main/Main';
 import { useEffect, useState } from 'react';
 import { isHomeState } from '@/recoil/isHome';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { loginModalState, userState } from '@/recoil/user';
+import { isBrowser } from 'browser-or-node';
 import dynamic from 'next/dynamic';
 
 export const scrollTo700vh = () => {
@@ -15,12 +17,26 @@ const DynamicLoginModal = dynamic(
   () => import('@/components/common/LoginModal')
 );
 const DynamicMainModal = dynamic(() => import('@/components/main/Main'));
+if (isBrowser) {
+  require('codemirror/mode/htmlmixed/htmlmixed');
+  require('codemirror/mode/css/css');
+  require('codemirror/mode/javascript/javascript');
+}
 
 export default function Home() {
   const setIsHome = useSetRecoilState(isHomeState);
   const user = useRecoilValue(userState);
   const isLoginModalOpen = useRecoilValue(loginModalState);
   const [onMainBundle, setOnMainBundle] = useState(false);
+
+  // if (onMainBundle) {
+  //   // DynamicCodeMirrorHTML;
+  //   // DynamicCodeMirrorCSS;
+  //   // DynamicCodeMirrorJS;
+  //   // require('codemirror/mode/htmlmixed/htmlmixed');
+  //   // require('codemirror/mode/css/css');
+  //   // require('codemirror/mode/javascript/javascript');
+  // }
 
   useEffect(() => {
     setIsHome(true);

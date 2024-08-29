@@ -14,7 +14,6 @@ export const SearchItem = ({
     topic_id,
     needHelp,
     rootLeaf,
-    bestLeaf,
 }: Props) => {
     const router = useRouter();
     const needHelpPing = (
