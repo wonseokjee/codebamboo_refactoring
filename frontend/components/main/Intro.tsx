@@ -16,7 +16,7 @@ export const Intro = () => {
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
       const scrolled = winScroll / height;
-      setScrollPercent(Math.round(scrolled * 100));
+      setScrollPercent(Math.round(scrolled * 80));
     };
 
     window.addEventListener('scroll', onScroll);
@@ -31,10 +31,10 @@ export const Intro = () => {
                     w-[60%] h-auto top-6 left-6
                     md:w-1/5 md:top-10 md:left-10'
       >
-        <img className='h-10 w-10' src='images/icons/bar_icon.png' />
+        <img className='h-8 w-8' src='images/icons/bar_icon.png' />
         <div
-          className=' text-white items-center text-[1rem] font-semibold 
-        md:font-bold md:text-[1rem]'
+          className=' text-white items-center text-[0.8rem] font-semibold 
+        md:font-bold md:text-[0.8rem]'
         >
           CodeBamboo
         </div>
@@ -42,11 +42,11 @@ export const Intro = () => {
       <h1
         className='text-white font-bold fixed z-20
                   text-2xl left-8 top-[30%]
-                  md:text-4xl md:text-center md:top-[35%] md:left-0 md:w-screen'
+                  md:text-3xl md:text-center md:top-[35%] md:left-0 md:w-screen'
         style={{
-          opacity: `${scrollPercent * 6}%`,
+          opacity: `${scrollPercent * 7}%`,
           transform: `translateY(${
-            scrollPercent * 6 < 100 ? 100 - scrollPercent * 6 : 0
+            scrollPercent * 7 < 100 ? 100 - scrollPercent * 7 : 0
           }%)`,
         }}
       >
@@ -57,11 +57,11 @@ export const Intro = () => {
       <h1
         className='text-white font-bold fixed z-20
                   text-2xl right-8 top-[60%] text-end
-                  md:text-4xl md:text-center md:top-[60%] md:left-0 md:w-screen'
+                  md:text-3xl md:text-center md:top-[60%] md:left-0 md:w-screen'
         style={{
-          opacity: `${scrollPercent * 4 - 100}%`,
+          opacity: `${scrollPercent * 5 - 100}%`,
           transform: `translateY(${
-            scrollPercent * 4 - 100 < 100 ? 100 - (scrollPercent * 4 - 100) : 0
+            scrollPercent * 5 - 100 < 100 ? 100 - (scrollPercent * 5 - 100) : 0
           }%)`,
         }}
       >
@@ -76,7 +76,7 @@ export const Intro = () => {
     <div
       className='intro-container'
       style={{
-        opacity: `${scrollPercent > 41 ? 1 - (scrollPercent - 41) / 50 : 1}`,
+        opacity: `${scrollPercent > 41 ? 1 - (scrollPercent - 41) / 35 : 1}`,
       }}
     >
       <div
@@ -100,7 +100,7 @@ export const Intro = () => {
         className='scroll-arrow fixed left-1/2 bottom-6 animate-scrollArrow z-10
                   w-10 h-10 transfrom hover:scale-80 cursor-pointer
                   md:w-10 md:h-10'
-        style={{ transform: `translateX(-50%)` }}
+        style={{ transform: `translateX(-40%)` }}
         onClick={() => scrollTo700vh()}
       ></div>
     </div>

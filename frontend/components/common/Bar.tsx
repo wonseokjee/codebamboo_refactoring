@@ -76,11 +76,11 @@ export const Bar = () => {
     <aside
       className={`flex text-center items-center z-40
                   flex-row justify-between h-20 text-white bg-black
-                  ${isHome ? 'absolute top-[700vh]' : 'relative'} w-screen
+                  ${isHome ? 'absolute top-[600vh]' : 'relative'} w-screen
                   md:flex-col md:justify-normal md:w-24 md:h-screen md:text-black md:bg-gray-100
                   md:hover:w-[11rem] md:transition-w md:duration-500 md:ease-in-out
                   md:items-start md:ps-4
-                  ${isHome ? 'md:relative md:top-[700vh]' : 'md:bottom-0'}`}
+                  ${isHome ? 'md:relative md:top-[600vh]' : 'md:bottom-0'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -29,14 +29,13 @@ export default function Home() {
   const isLoginModalOpen = useRecoilValue(loginModalState);
   const [onMainBundle, setOnMainBundle] = useState(false);
 
-  // if (onMainBundle) {
-  //   // DynamicCodeMirrorHTML;
-  //   // DynamicCodeMirrorCSS;
-  //   // DynamicCodeMirrorJS;
-  //   // require('codemirror/mode/htmlmixed/htmlmixed');
-  //   // require('codemirror/mode/css/css');
-  //   // require('codemirror/mode/javascript/javascript');
-  // }
+  if (onMainBundle) {
+    //여기서 require 해버리면 이미 codemirror.js 가 번들에 포함됨.
+    //이부분을 lazyloading하는게 중요함.
+    // require('codemirror/mode/htmlmixed/htmlmixed');
+    // require('codemirror/mode/css/css');
+    // require('codemirror/mode/javascript/javascript');
+  }
 
   useEffect(() => {
     setIsHome(true);
@@ -54,7 +53,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <div className='w-full h-[800vh]'>
+    <div className='w-full h-[500vh]'>
       <Intro />
       {onMainBundle ? <DynamicMainModal /> : <></>}
       {isLoginModalOpen ? <DynamicLoginModal /> : <></>}
